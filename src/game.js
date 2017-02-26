@@ -58,11 +58,8 @@ var Game = {
   },
 
   spawnObstacle: function() {
-    var obstacle = game.add.sprite(game.world.width, game.world.height - 150, "obstacle");
+    var obstacle = this.obstacles.create(game.world.width, game.world.height - 150, "obstacle");
 
-    this.obstacles.add(obstacle);
-
-    game.physics.arcade.enable(obstacle);
     obstacle.body.velocity.x = -this.current_speed;
 
     obstacle.checkWorldBounds = true;
